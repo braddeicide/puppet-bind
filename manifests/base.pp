@@ -37,7 +37,7 @@ class bind::base inherits bind::params {
   }
 
   exec {'reload bind9':
-    command     => $bind::params::service_restart,
+    command     => "service ${bind::params::service_name} reload",
     onlyif      => "named-checkconf -jz ${bind::params::config_base_dir}/${bind::params::named_conf_name}",
     refreshonly => true,
   }
