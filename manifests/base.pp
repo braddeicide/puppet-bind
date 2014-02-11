@@ -31,7 +31,7 @@ class bind::base inherits bind::params {
     name      => $bind::params::service_name,
     enable    => true,
     require   => Package['bind9'],
-    restart   => $bind::params::service_restart,
+    restart   => $bind::params::restart,
     hasstatus => $bind::params::service_has_status,
     pattern   => $bind::params::service_pattern
   }
